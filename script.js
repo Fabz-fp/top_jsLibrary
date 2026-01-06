@@ -1,5 +1,6 @@
 const myLibrary = [];
 const container = document.getElementById('container');
+const newBookBtn = document.getElementById('new-book-btn');
 
 function Book(title, author, pages) {
     this.title = title;
@@ -38,6 +39,16 @@ function displayBooks() {
     });
 }
 
+newBookBtn.addEventListener('click', () => {
+    const title = prompt('Enter book title:');
+    const author = prompt('Enter book author:');
+    const pages = prompt('Enter number of pages:');
+
+    if (title && author && pages) {
+        addBookToLibrary(title, author, parseInt(pages, 10));
+        displayBooks();
+    }
+});
 // Example usage
 addBookToLibrary('The Great Gatsby', 'F. Scott Fitzgerald', 180);
 addBookToLibrary('1984', 'George Orwell', 328);
