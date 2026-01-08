@@ -8,6 +8,27 @@
 </head>
 <body>
     <button id="new-book-btn" class="btn">New Book</button>
+
+    <dialog id="book-dialog">
+        <form id="book-form">
+            <h2>New Book</h2>
+
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <input type="number" id="pages" placeholder="Number of Pages" required>
+
+            <label class="read-label">
+                <input type="checkbox" id="read">
+                Read
+            </label>
+
+            <div class="menu">
+                <button type="button" id="cancel-btn">Cancel</button>
+                <button type="submit" id="submit-btn">Add</button>
+            </div>
+        </form>
+    </dialog>
+
     <div id="container"></div>
 
     <script src="script.js"></script>
