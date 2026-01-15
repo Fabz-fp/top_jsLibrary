@@ -5,21 +5,22 @@ const dialog = document.getElementById('book-dialog');
 const form = document.getElementById('book-form');
 const cancelBtn = document.getElementById('cancel-btn');
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
+class Book {
+    constructor(title, author, pages, read = false) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        newBook.id = crypto.randomUUID();
+    }
 
-Book.prototype.toggleRead = function() {
-    this.read = !this.read;
-};
+    toggleRead() {
+        this.read = !this.read;
+    }
+}
 
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
-    newBook.id = crypto.randomUUID();
-
     myLibrary.push(newBook);
 }
 
