@@ -11,7 +11,7 @@ class Book {
         this.author = author;
         this.pages = pages;
         this.read = read;
-        newBook.id = crypto.randomUUID();
+        this.id = crypto.randomUUID();
     }
 
     toggleRead() {
